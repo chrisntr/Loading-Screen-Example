@@ -13,6 +13,7 @@
     <AssemblyName>LoadingScreenExample</AssemblyName>
     <MtouchSdkVersion>3.0</MtouchSdkVersion>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <BundleIcon>Icon.png</BundleIcon>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -97,5 +98,8 @@
   </ProjectExtensions>
   <ItemGroup>
     <None Include="Web References\www.w3schools.com\Reference.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.png" />
   </ItemGroup>
 </Project>
