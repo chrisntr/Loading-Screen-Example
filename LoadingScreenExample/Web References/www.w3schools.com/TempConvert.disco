@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<discovery xmlns:scl="http://schemas.xmlsoap.org/disco/scl/" xmlns="http://schemas.xmlsoap.org/disco/">
+  <scl:contractRef docRef="http://www.w3schools.com/WebServices/TempConvert.asmx" ref="http://www.w3schools.com/WebServices/TempConvert.asmx?wsdl" />
+</discovery>

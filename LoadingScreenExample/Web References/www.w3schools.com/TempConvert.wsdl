@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s0="http://tempuri.org/" xmlns:tns="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" targetNamespace="http://tempuri.org/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="FahrenheitToCelsius">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="Fahrenheit" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="FahrenheitToCelsiusResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="FahrenheitToCelsiusResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CelsiusToFahrenheit">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="Celsius" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="CelsiusToFahrenheitResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="CelsiusToFahrenheitResult" type="xs:string" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="string" nillable="true" type="xs:string" />
+    </xs:schema>
+  </types>
+  <message name="FahrenheitToCelsiusSoapIn">
+    <part name="parameters" element="tns:FahrenheitToCelsius" />
+  </message>
+  <message name="FahrenheitToCelsiusSoapOut">
+    <part name="parameters" element="tns:FahrenheitToCelsiusResponse" />
+  </message>
+  <message name="CelsiusToFahrenheitSoapIn">
+    <part name="parameters" element="tns:CelsiusToFahrenheit" />
+  </message>
+  <message name="CelsiusToFahrenheitSoapOut">
+    <part name="parameters" element="tns:CelsiusToFahrenheitResponse" />
+  </message>
+  <message name="FahrenheitToCelsiusHttpPostIn">
+    <part name="Fahrenheit" type="s:string" />
+  </message>
+  <message name="FahrenheitToCelsiusHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <message name="CelsiusToFahrenheitHttpPostIn">
+    <part name="Celsius" type="s:string" />
+  </message>
+  <message name="CelsiusToFahrenheitHttpPostOut">
+    <part name="Body" element="tns:string" />
+  </message>
+  <portType name="TempConvertSoap">
+    <operation name="FahrenheitToCelsius">
+      <input message="tns:FahrenheitToCelsiusSoapIn" />
+      <output message="tns:FahrenheitToCelsiusSoapOut" />
+    </operation>
+    <operation name="CelsiusToFahrenheit">
+      <input message="tns:CelsiusToFahrenheitSoapIn" />
+      <output message="tns:CelsiusToFahrenheitSoapOut" />
+    </operation>
+  </portType>
+  <portType name="TempConvertHttpPost">
+    <operation name="FahrenheitToCelsius">
+      <input message="tns:FahrenheitToCelsiusHttpPostIn" />
+      <output message="tns:FahrenheitToCelsiusHttpPostOut" />
+    </operation>
+    <operation name="CelsiusToFahrenheit">
+      <input message="tns:CelsiusToFahrenheitHttpPostIn" />
+      <output message="tns:CelsiusToFahrenheitHttpPostOut" />
+    </operation>
+  </portType>
+  <binding name="TempConvertSoap" type="tns:TempConvertSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="FahrenheitToCelsius">
+      <soap:operation soapAction="http://tempuri.org/FahrenheitToCelsius" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CelsiusToFahrenheit">
+      <soap:operation soapAction="http://tempuri.org/CelsiusToFahrenheit" style="document" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="TempConvertSoap12" type="tns:TempConvertSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="FahrenheitToCelsius">
+      <soap12:operation soapAction="http://tempuri.org/FahrenheitToCelsius" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CelsiusToFahrenheit">
+      <soap12:operation soapAction="http://tempuri.org/CelsiusToFahrenheit" style="document" />
+      <input>
+        <soap12:body use="literal" />
+      </input>
+      <output>
+        <soap12:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <binding name="TempConvertHttpPost" type="tns:TempConvertHttpPost">
+    <http:binding verb="POST" />
+    <operation name="FahrenheitToCelsius">
+      <http:operation location="/FahrenheitToCelsius" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+    <operation name="CelsiusToFahrenheit">
+      <http:operation location="/CelsiusToFahrenheit" />
+      <input>
+        <mime:content part="" type="application/x-www-form-urlencoded" />
+      </input>
+      <output>
+        <mime:mimeXml part="Body" />
+      </output>
+    </operation>
+  </binding>
+  <service name="TempConvert">
+    <port name="TempConvertSoap" binding="tns:TempConvertSoap">
+      <soap:address location="http://www.w3schools.com/WebServices/TempConvert.asmx" />
+    </port>
+    <port name="TempConvertSoap12" binding="tns:TempConvertSoap12">
+      <soap12:address location="http://www.w3schools.com/WebServices/TempConvert.asmx" />
+    </port>
+    <port name="TempConvertHttpPost" binding="tns:TempConvertHttpPost">
+      <http:address location="http://www.w3schools.com/WebServices/TempConvert.asmx" />
+    </port>
+  </service>
+</definitions>

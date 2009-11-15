@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DiscoveryClientResultsFile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Results>
+    <DiscoveryClientResult filename="TempConvert.wsdl" referenceType="System.Web.Services.Discovery.ContractReference" url="http://www.w3schools.com/WebServices/TempConvert.asmx?wsdl" />
+    <DiscoveryClientResult filename="TempConvert.disco" referenceType="System.Web.Services.Discovery.DiscoveryDocumentReference" url="http://www.w3schools.com/WebServices/TempConvert.asmx?disco" />
+  </Results>
+</DiscoveryClientResultsFile>
